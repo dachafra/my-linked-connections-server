@@ -115,7 +115,7 @@ Once you have properly configured the server, make sure to have [Docker](https:/
 ```bash
 $ git clone https://github.com/dachafra/my-linked-connections-server.git
 $ cd my-linked-connections-server
-$ docker build -t my-lc-server
+$ docker build -t my-lc-server .
 $ docker run -d --name name-for-your-container -p localhost-port:your-port-in-server-file my-lc-server 
 ```
 After started your server will start fetching the datasets you configured according to their Cron configuration.
