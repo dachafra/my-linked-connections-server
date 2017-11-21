@@ -69,6 +69,47 @@ Here is an example of how to configure it:
     ]
 }
 ```
+
+## Historic Data
+The server also allows quierying historic data by means of the [Memento Framework](https://tools.ietf.org/html/rfc7089) which enables time-based content negotiation over HTTP. By using the **Accept-Datetime** header a client can request the state of a resource at a given moment. If existing, the server will respond with a 302 Found containing the URI of the stored version of such resource. For example:
+```bash
+$ curl -v -L -H "Accept-Datetime: 2017-10-06T13:00:00.000Z" http://localhost:3000/companyX/connections?departureTime=2017-10-06T15:50:00.000Z
+
+> GET /companyX/connections?departureTime=2017-10-06T15:50:00.000Z HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/7.52.1
+> Accept: */*
+> Accept-Datetime: 2017-10-06T13:00:00.000Z
+
+< HTTP/1.1 302 Found
+< X-Powered-By: Express
+< Access-Control-Allow-Origin: *
+< Location: /memento/companyX?version=2017-10-28T03:07:47.000Z&departureTime=2017-10-06T15:50:00.000Z
+< Vary: Accept-Encoding, Accept-Datetime
+< Link: <http://localhost:3000/companyX/connections?departureTime=2017-10-06T15:50:00.000Z>; rel="original timegate"
+< Date: Mon, 13 Nov 2017 15:00:36 GMT
+< Connection: keep-alive
+< Content-Length: 0
+
+> GET /memento/companyX?version=2017-10-28T03:07:47.000Z&departureTime=2017-10-06T15:50:00.000Z HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/7.52.1
+> Accept: */*
+> Accept-Datetime: 2017-10-06T13:00:00.000Z
+
+< HTTP/1.1 200 OK
+< X-Powered-By: Express
+< Memento-Datetime: Fri, 06 Oct 2017 13:00:00 GMT
+< Link: <http://localhost:3000/companyX/connections?departureTime=2017-10-06T15:50:00.000Z>; rel="original timegate"
+< Access-Control-Allow-Origin: *
+< Content-Type: application/ld+json; charset=utf-8
+< Content-Length: 289915
+< ETag: W/"46c7b-TOdDIcDjCvUXTC/gzqr5hxVDZjg"
+< Date: Mon, 13 Nov 2017 15:00:36 GMT
+< Connection: keep-alive
+```
+The previous example shows a request made to obtain the Connections fragment identified by the URL http://localhost:3000/companyX/connections?departureTime=2017-10-06T15:50:00.000Z, but specifically the state of this fragment as it was at **Accept-Datetime: 2017-10-06T13:00:00.000Z**. This means that is possible to know what was the state of the delays at 13:00 for the departures at 15:50 on 2017-10-06.
+
 ## Run it
 Once you have properly configured the server, make sure to have [Docker](https://docs.docker.com/engine/installation/) installed. To run it follow this:
 ```bash
