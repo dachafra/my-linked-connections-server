@@ -2,15 +2,22 @@
     "storage": "/tripscore/datasets",
     "datasets":[
         {
-            "companyName": "emt",
-            "downloadUrl": "http://servicios.emtmadrid.es:8080/GTFS/transitEMT.zip",
-            "updatePeriod": "0 20 * * * *",
+            "companyName": "amb",
+            "downloadUrl": "http://www.ambmobilitat.cat/OpenData/google_transit.zip",
+            "downloadOnLaunch": true,
+            "updatePeriod": "0 0 1 * * *",
+            "realTimeData": {
+                "downloadUrl": "https://ssl.ambmobilitat.cat/transit/trips-updates/trips.bin",
+                "updatePeriod": "*/30 * * * * *"
+            },
             "baseURIs": {
-                "stops": "http://madrid.linkedconnections.org/emt/stops/",
-                "connections": "http://madrid.linkedconnections.org/emt/connections/",
-                "trips": "http://madrid.linkedconnections.org/emt/trips/",
-                "routes": "http://madrid.linkedconnections.org/emt/routes/"
+                "connections": "http://barcelona.linkedconnections.org/amb/connections/",
+                "stops": "http://barcelona.linkedconnections.org/amb/stops/",
+                "trips": "http://barcelona.linkedconnections.org/amb/trips/",
+                "routes": "http://barcelona.linkedconnections.org/amb/routes/"
             }
         }
+
+
     ]
 }
