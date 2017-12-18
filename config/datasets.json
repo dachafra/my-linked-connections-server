@@ -1,30 +1,15 @@
 {
-    "storage": "/tripscore/datasets", //datasets storage path
+    "storage": "/tripscore/datasets",
     "datasets":[
         {
-            "companyName": "companyX",
-            "downloadUrl": "http://...",
-            "updatePeriod": "0 0 2 * * *", //every day at 2am
-            "realTimeData": {
-                "downloadUrl": "http://...",
-                "updatePeriod": "*/30 * * * * *"
-            },
+            "companyName": "emt",
+            "downloadUrl": "http://servicios.emtmadrid.es:8080/GTFS/transitEMT.zip",
+            "updatePeriod": "0 20 * * * *",
             "baseURIs": {
-                "connections": "http://example.org/connections/",
-                "stops": "http://example.org/stops/",
-                "trips": "http://example.org/trips/",
-                "routes": "http://example.org/routes/"
-            }
-        },
-        {
-            "companyName": "companyY",
-            "downloadUrl": "http://...",
-            "updatePeriod": "0 0 3 * * *", //every day at 3am
-            "baseURIs": {
-                "connections": "http://example.org/connections/",
-                "stops": "http://example.org/stops/",
-                "trips": "http://example.org/trips/",
-                "routes": "http://example.org/routes/"
+                "stops": "http://madrid.linkedconnections.org/emt/stops/",
+                "connections": "http://madrid.linkedconnections.org/emt/connections/",
+                "trips": "http://madrid.linkedconnections.org/emt/trips/",
+                "routes": "http://madrid.linkedconnections.org/emt/routes/"
             }
         }
     ]

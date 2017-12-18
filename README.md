@@ -9,6 +9,8 @@ The configuration is made through 2 different config files. One is for defining 
 As mentioned above the Web server configuration is made using the ([server.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/server.json)) config file which uses the JSON format and defines the following properties:
 - **hostname:** Used to define the Web Server host name. **Is a mandatory parameter**.
 
+- **extension:** Used to define the global company or the city of the datasets. **Is not a mandatory parameter**.
+
 - **port:** TCP/IP port to be used by the Web Server to receive requests. **Is a mandatory parameter**.
 
 - **protocol:** Used to define the accepted protocol by the Web Server which could be either HTTP o HTTPS. In case that both protocols are supported there is no need to define this parameter, but all requests made to the server **MUST** contain the **X-Forwarded-Proto** header stating the procotol being used. This is useful when the server is used along with cache management servers.
@@ -18,6 +20,7 @@ This is a configuration example:
 {
     "hostname": "localhost:3000",
     "port": 3000,
+    "extension": "madrid",
     "protocol": "http"
 }
 ```
