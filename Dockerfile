@@ -1,2 +1,2 @@
-FROM dchaves1/linked-connections-server:2.0
+FROM dchaves1/linked-connections-server:1.0
 COPY config /tripscore/linked-connections-server/config
