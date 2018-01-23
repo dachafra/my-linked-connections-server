@@ -1,0 +1,17 @@
+{
+    "storage": "/tripscore/datasets",
+    "datasets":[
+        {
+            "companyName": "caceres",
+            "downloadUrl": "http://dachafra.github.io/spaingtfs/datasets/caceres/caceres.zip",
+            "downloadOnLaunch": true,
+            "updatePeriod": "0 0 1 * * *",
+            "baseURIs": {
+                "connections": "http://caceres.linkedconnections.org/bus/connections/",
+                "stops": "http://caceres.linkedconnections.org/bus/stops/",
+                "trips": "http://caceres.linkedconnections.org/bus/trips/",
+                "routes": "http://caceres.linkedconnections.org/bus/routes/"
+            }
+        }
+    ]
+}
