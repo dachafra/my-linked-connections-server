@@ -1,5 +1,5 @@
 {
-    "hostname": "localhost:3000",
+    "hostname": "tripscore.lab.oeg-upm.net",
     "port": 3000,
     "extension": "madrid/",
     "protocol": "http"

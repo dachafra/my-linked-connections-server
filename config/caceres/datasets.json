@@ -2,7 +2,7 @@
     "storage": "/tripscore/datasets",
     "datasets":[
         {
-            "companyName": "caceres",
+            "companyName": "bus",
             "downloadUrl": "http://dachafra.github.io/spaingtfs/datasets/caceres/caceres.zip",
             "downloadOnLaunch": true,
             "updatePeriod": "0 0 1 * * *",
