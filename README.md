@@ -3,10 +3,10 @@ Express based Web Server that exposes [Linked Connections](http://linkedconnecti
 
 
 ## Configuration
-The configuration is made through 2 different config files. One is for defining Web Server parameters ([server.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/server.json)) and the other is for defining the different datasources that will be managed and exposed through the Linked Connections Server ([datasets.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/datasets.json)). Next you could find an example and a description of each config file.
+The configuration is made through 2 different config files. One is for defining Web Server parameters ([server.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/madrid/server.json)) and the other is for defining the different datasources that will be managed and exposed through the Linked Connections Server ([datasets.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/madrid/datasets.json)). Next you could find an example and a description of each config file.
 
 ### Web Server configuration
-As mentioned above the Web server configuration is made using the ([server.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/server.json)) config file which uses the JSON format and defines the following properties:
+As mentioned above the Web server configuration is made using the ([server.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/madrid/server.json)) config file which uses the JSON format and defines the following properties:
 - **hostname:** Used to define the Web Server host name. **Is a mandatory parameter**.
 
 - **extension:** Used to define the global company or the city of the datasets. **Is not a mandatory parameter**.
@@ -25,7 +25,7 @@ This is a configuration example:
 }
 ```
 ### Datasets configuration
-The Web Server does not provide any functionality by itself, it needs at least one dataset (in GTFS format) that can be downloaded, to be processed and exposed as Linked Connections. And to tell the server where to find and store such datasets, we use the ([datasets.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/datasets.json)) config file. All the parameters in this config file are **Mandatory**, otherwise the server won't function properly. This file contains the following parameters:
+The Web Server does not provide any functionality by itself, it needs at least one dataset (in GTFS format) that can be downloaded, to be processed and exposed as Linked Connections. And to tell the server where to find and store such datasets, we use the ([datasets.json](https://github.com/dachafra/my-linked-connections-server/blob/master/config/madrid/datasets.json)) config file. All the parameters in this config file are **Mandatory**, otherwise the server won't function properly. This file contains the following parameters:
 - **storage:** This parameters is the path that tells the server where to store and where to look for the data fragments, created from the different datasets. **This should not include a trailing slash**. Make sure you have enough disk space to store datasets. Processing can require up to 12gb of free disk space. After they are processed, some of them may take up to 4GB.
 
 - **companyName:** Name of the transport company that provides a GTFS dataset feed.
