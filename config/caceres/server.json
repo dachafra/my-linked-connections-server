@@ -1,6 +1,5 @@
 {
     "hostname": "localhost:3000",
     "port": 3000,
-    "extension": "",
     "protocol": "http"
 }
