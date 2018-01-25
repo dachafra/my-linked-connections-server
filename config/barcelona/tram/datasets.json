@@ -2,22 +2,6 @@
     "storage": "/tripscore/datasets",
     "datasets":[
         {
-            "companyName": "amb",
-            "downloadUrl": "http://dachafra.github.io/spaingtfs/datasets/barcelona/amb.zip",
-            "downloadOnLaunch": true,
-            "updatePeriod": "0 0 1 * * *",
-            "realTimeData": {
-                "downloadUrl": "https://ssl.ambmobilitat.cat/transit/trips-updates/trips.bin",
-                "updatePeriod": "*/30 * * * * *"
-            },
-            "baseURIs": {
-                "connections": "http://barcelona.linkedconnections.org/bus/connections/",
-                "stops": "http://barcelona.linkedconnections.org/bus/stops/",
-                "trips": "http://barcelona.linkedconnections.org/bus/trips/",
-                "routes": "http://barcelona.linkedconnections.org/bus/routes/"
-            }
-        },
-        {
             "companyName": "tbs",
             "downloadUrl": "http://dachafra.github.io/spaingtfs/datasets/barcelona/TBS.zip",
             "downloadOnLaunch": true,
