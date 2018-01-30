@@ -20,7 +20,7 @@ This is a configuration example:
 {
     "hostname": "localhost:3000",
     "port": 3000,
-    "extension": "madrid",
+    "extension": "madrid/",
     "protocol": "http"
 }
 ```
@@ -119,14 +119,14 @@ Once you have properly configured the server, make sure to have [Docker](https:/
 $ git clone https://github.com/dachafra/my-linked-connections-server.git
 $ cd my-linked-connections-server
 $ docker build -t my-lc-server .
-$ docker run -d --name name-for-your-container -p localhost-port:3000 my-lc-server
+$ docker run -d --name name-for-your-container -e CITY='tripscore/config/folder' -p localhost-port:3000 my-lc-server
 ```
 After started your server will start fetching the datasets you configured according to their Cron configuration.
 
 ## Use it
 To use it make sure you already have at least one fully processed dataset (the logs will tell you when). If so you can query the Linked Connections using the departure time as a parameter like this for example:
 ```http
-http://localhost:3000/companyX/connections?departureTime=2017-08-11T16:45:00.000Z
+http://localhost:3000/extension/companyX/connections?departureTime=2017-08-11T16:45:00.000Z
 ```
 If available, the server will redirect you to the Linked Connections fragment that contains connections with departure times as close as possible to the one requested.
 

@@ -3,7 +3,7 @@
     "datasets":[
         {
             "companyName": "amb",
-            "downloadUrl": "http://www.ambmobilitat.cat/OpenData/google_transit.zip",
+            "downloadUrl": "http://dachafra.github.io/spaingtfs/datasets/barcelona/amb.zip",
             "downloadOnLaunch": true,
             "realTimeData": {
                 "downloadUrl": "https://ssl.ambmobilitat.cat/transit/trips-updates/trips.bin",
