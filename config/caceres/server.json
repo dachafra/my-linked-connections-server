@@ -1,6 +1,6 @@
 {
     "hostname": "tripscore.lab.oeg-upm.net",
     "port": 3000,
-    "extension": "",
+    "extension": "caceres/",
     "protocol": "http"
 }
